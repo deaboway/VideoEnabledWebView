@@ -1,5 +1,6 @@
 package name.cpr;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -54,6 +55,12 @@ public class ExampleActivity extends ActionBarActivity
                         //noinspection all
                         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
                     }
+                    /**
+                     * 设置为横屏
+                     */
+                    if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                    }
                 }
                 else
                 {
@@ -65,6 +72,12 @@ public class ExampleActivity extends ActionBarActivity
                     {
                         //noinspection all
                         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+                    }
+                    /**
+                     * 设置为竖屏
+                     */
+                    if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT){
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     }
                 }
 
@@ -79,7 +92,7 @@ public class ExampleActivity extends ActionBarActivity
 
     }
 
-    private class InsideWebViewClient extends WebViewClient {
+    private class InsideWebViewClient extends android.webkit.WebViewClient {
         @Override
         // Force links to be opened inside WebView and not in Default Browser
         // Thanks http://stackoverflow.com/a/33681975/1815624

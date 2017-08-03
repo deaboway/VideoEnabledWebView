@@ -134,7 +134,7 @@ public class VideoEnabledWebChromeClient extends WebChromeClient implements Medi
             this.videoViewCallback = callback;
 
             // Hide the non-video view, add the video view, and show it
-            activityNonVideoView.setVisibility(View.INVISIBLE);
+            activityNonVideoView.setVisibility(View.GONE);
             activityVideoView.addView(videoViewContainer, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             activityVideoView.setVisibility(View.VISIBLE);
 
@@ -201,7 +201,7 @@ public class VideoEnabledWebChromeClient extends WebChromeClient implements Medi
         if (isVideoFullscreen)
         {
             // Hide the video view, remove it, and show the non-video view
-            activityVideoView.setVisibility(View.INVISIBLE);
+            activityVideoView.setVisibility(View.GONE);
             activityVideoView.removeView(videoViewContainer);
             activityNonVideoView.setVisibility(View.VISIBLE);
 
